@@ -1,0 +1,18 @@
+{
+	"info": {
+		"_postman_id": "fe4ad536-7d98-4748-abc4-8071e7127f98",
+		"name": "Recruitment Task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29118492"
+	},
+	"item": [
+		{
+			"name": "getUsersGitHubRepositoryInfo",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
