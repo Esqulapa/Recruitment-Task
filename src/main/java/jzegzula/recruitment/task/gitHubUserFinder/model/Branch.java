@@ -1,13 +1,14 @@
 package jzegzula.recruitment.task.gitHubUserFinder.model;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import jzegzula.recruitment.task.gitHubUserFinder.deserializer.BranchDeserializer;
-
-@JsonDeserialize(using = BranchDeserializer.class)
 public class Branch {
 
   private String name;
-  private String sha;
+  private Commit commit;
+
+  public Branch(String name, Commit commit) {
+    this.name = name;
+    this.commit = commit;
+  }
 
   public String getName() {
     return name;
@@ -17,11 +18,11 @@ public class Branch {
     this.name = name;
   }
 
-  public String getSha() {
-    return sha;
+  public Commit getCommit() {
+    return commit;
   }
 
-  public void setSha(String sha) {
-    this.sha = sha;
+  public void setCommit(Commit commit) {
+    this.commit = commit;
   }
 }

@@ -1,17 +1,21 @@
 package jzegzula.recruitment.task.gitHubUserFinder.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import java.util.List;
-import jzegzula.recruitment.task.gitHubUserFinder.deserializer.GitHubRepoDeserializer;
 
-@JsonDeserialize(using = GitHubRepoDeserializer.class)
 public class GitHubRepository {
 
   private String name;
-  @JsonIgnore private boolean fork;
-  private String owner;
+  private Boolean fork;
+  private Owner owner;
   private List<Branch> branches;
+
+  public GitHubRepository(String name, Boolean fork, Owner owner, List<Branch> branches) {
+    this.name = name;
+    this.fork = fork;
+    this.owner = owner;
+    this.branches = branches;
+  }
 
   public String getName() {
     return name;
@@ -29,11 +33,11 @@ public class GitHubRepository {
     this.fork = fork;
   }
 
-  public String getOwner() {
+  public Owner getOwner() {
     return owner;
   }
 
-  public void setOwner(String owner) {
+  public void setOwner(Owner owner) {
     this.owner = owner;
   }
 
